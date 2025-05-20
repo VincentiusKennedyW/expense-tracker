@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { db } from "../firebase";
-import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { collection, addDoc, serverTimestamp, Timestamp } from "firebase/firestore";
 import toast, { Toaster } from "react-hot-toast";
 
-export type expense = {
+export type Expense = {
     id?: string;
-    name: string;
+    description: string;
     amount: number;
-    date: Date
-    ;
+    date: Timestamp;
 }
 
 export function ExpenseForm() {
